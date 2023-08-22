@@ -1,0 +1,23 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+micros:
+  - name: backend
+    src: ./
+    engine: nodejs16
+    primary: true
+    public: true
+    run: node test/app.js
+    presets:
+      env:
+        - name: JWT_ACCESS_TOKEN_SECRET
+          description: JWT access token için secret
+          default: "buraya_secret_key_yazıyoruz_1234"
+        - name: HASURA_ADMIN_SECRET
+          description: hasura admin secret
+          default: "test1234"
+        - name: GMAIL_USER
+          description: GMAIL_USER
+          default: "myhasurabackendd@gmail.com"
+        - name: GMAIL_PASSWORD
+          description: GMAIL_PASSWORD
+          default: "efuvzfpjocfdemnc"
